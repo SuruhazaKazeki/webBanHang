@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace webBanHang.Migrations
+namespace WebBanHang.Migrations
 {
-    public partial class SeedDataToTable : Migration
+    public partial class addValue : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -37,10 +37,10 @@ namespace webBanHang.Migrations
                     { 9, 1, null, null, "Iphone 15", 1200.0 },
                     { 10, 1, null, null, "Iphone 15 Pro Max ", 1450.0 },
                     { 11, 2, null, null, "Ipad Gen 10", 750.0 },
-                    { 12, 2, null, null, "Ipad Pro 11", 1250.0 }
+                    { 12, 2, null, null, "Ipad Pro 11", 1250.0 }                                                       
                 });
         }
-
+         
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DeleteData(

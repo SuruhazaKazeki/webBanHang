@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using webBanHang.Models;
+using WebBanHang.Models;
 
-namespace webBanHang.Migrations
+namespace WebBanHang.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250513085132_SeedDataToTable")]
-    partial class SeedDataToTable
+    [Migration("20250513082337_addValue")]
+    partial class addValue
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,7 +20,7 @@ namespace webBanHang.Migrations
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("webBanHang.Models.Category", b =>
+            modelBuilder.Entity("WebBanHang.Models.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -58,7 +58,7 @@ namespace webBanHang.Migrations
                         });
                 });
 
-            modelBuilder.Entity("webBanHang.Models.Product", b =>
+            modelBuilder.Entity("WebBanHang.Models.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -175,9 +175,9 @@ namespace webBanHang.Migrations
                         });
                 });
 
-            modelBuilder.Entity("webBanHang.Models.Product", b =>
+            modelBuilder.Entity("WebBanHang.Models.Product", b =>
                 {
-                    b.HasOne("webBanHang.Models.Category", "Category")
+                    b.HasOne("WebBanHang.Models.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)

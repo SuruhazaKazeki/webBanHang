@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using webBanHang.Models;
+using WebBanHang.Models;
 
-namespace webBanHang.Controllers
+namespace WebBanHang.Controllers
 {
     public class HomeController : Controller
     {

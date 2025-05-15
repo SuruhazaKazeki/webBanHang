@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-namespace webBanHang.Models
-    
+
+namespace WebBanHang.Models
 {
     public class ApplicationDbContext : DbContext
     {
@@ -13,16 +13,16 @@ namespace webBanHang.Models
         }
         public DbSet<Category> Categories { set; get; }
         public DbSet<Product> Products { set; get; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-            //seed data to table Categories
+            //them du lieu Categories
             modelBuilder.Entity<Category>().HasData(
             new Category { Id = 1, Name = "Điện thoại", DisplayOrder = 1 },
             new Category { Id = 2, Name = "Máy tính bảng", DisplayOrder = 2 },
             new Category { Id = 3, Name = "Laptop", DisplayOrder = 3 });
-            //seed data to table Product
 
+            //them du lieu Product
             modelBuilder.Entity<Product>().HasData(
             new Product { Id = 1, Name = "Iphone 7", Price = 300, CategoryId = 1 },
             new Product { Id = 2, Name = "Iphone 7s", Price = 350, CategoryId = 1 },
@@ -37,6 +37,5 @@ namespace webBanHang.Models
             new Product { Id = 11, Name = "Ipad Gen 10", Price = 750, CategoryId = 2 },
             new Product { Id = 12, Name = "Ipad Pro 11", Price = 1250, CategoryId = 2 });
         }
-    }   
+    }
 }
-

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
-namespace webBanHang.Models
+namespace WebBanHang.Models
 {
     public class Category
     {

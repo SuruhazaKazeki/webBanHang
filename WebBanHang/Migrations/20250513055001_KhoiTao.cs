@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace webBanHang.Migrations
+namespace WebBanHang.Migrations
 {
     public partial class KhoiTao : Migration
     {

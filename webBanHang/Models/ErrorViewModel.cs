@@ -1,6 +1,6 @@
 using System;
 
-namespace webBanHang.Models
+namespace WebBanHang.Models
 {
     public class ErrorViewModel
     {
