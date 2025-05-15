@@ -1,0 +1,22 @@
+﻿@if (TempData["success"] != null)
+{
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        Swal.fire({
+            title: "Good job!",
+            text: "Thêm thành công!!",
+            icon: "success"
+        });
+    </script>
+}
+@if (TempData["error"] != null)
+{
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+    Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Thêm thất bại~!",
+    });
+    </script>
+}
