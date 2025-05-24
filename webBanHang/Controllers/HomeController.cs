@@ -12,15 +12,24 @@ namespace WebBanHang.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private ApplicationDbContext _db;
+        public HomeController(ILogger<HomeController> logger,ApplicationDbContext db)
         {
             _logger = logger;
+            _db = db;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int page=1)
         {
-            return View();
+            var pageSize = 3;
+            var dsSP = _db.Products.ToList();
+            return View(dsSP.Skip((page-1)*pageSize).Take(pageSize).ToList());
+        }
+        public IActionResult LoadMore(int page = 1)
+        {
+            var pageSize = 3;
+            var dsSP = _db.Products.ToList();
+            return PartialView("_ProductPartial",dsSP.Skip((page - 1) * pageSize).Take(pageSize).ToList());
         }
 
         public IActionResult Privacy()

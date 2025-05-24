@@ -56,7 +56,7 @@
             </li>
 
             <!-- Các trang -->
-            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            @for (int i = ViewBag.from; i <= ViewBag.to; i++)
             {
                 <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
                     <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
