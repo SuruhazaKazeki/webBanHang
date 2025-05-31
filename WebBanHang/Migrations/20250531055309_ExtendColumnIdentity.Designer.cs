@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebBanHang.Models;
 
-namespace WebBanHang.Migrations
+namespace webBanHang.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250524092908_AddIdentityTable")]
-    partial class AddIdentityTable
+    [Migration("20250531055309_ExtendColumnIdentity")]
+    partial class ExtendColumnIdentity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -164,10 +164,12 @@ namespace WebBanHang.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -204,10 +206,12 @@ namespace WebBanHang.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -290,6 +294,7 @@ namespace WebBanHang.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
+                            ImageUrl = "images/products/f4b64997-abfc-428e-ac53-2f58f4a022aa.jpg",
                             Name = "Iphone 7",
                             Price = 300.0
                         },
@@ -297,6 +302,7 @@ namespace WebBanHang.Migrations
                         {
                             Id = 2,
                             CategoryId = 1,
+                            ImageUrl = "images/products/559e0fa1-fce5-41ae-82c5-ad38b1fe92f8.jpg",
                             Name = "Iphone 7s",
                             Price = 350.0
                         },
@@ -304,6 +310,7 @@ namespace WebBanHang.Migrations
                         {
                             Id = 3,
                             CategoryId = 1,
+                            ImageUrl = "images/products/56ae225d-7c00-405f-b4a1-9b6193888789.jpg",
                             Name = "Iphone 8",
                             Price = 400.0
                         },
@@ -311,6 +318,7 @@ namespace WebBanHang.Migrations
                         {
                             Id = 4,
                             CategoryId = 1,
+                            ImageUrl = "images/products/bf448f8c-9d1c-40d9-a61f-4bc3b0078540.jpg",
                             Name = "Iphone 8s",
                             Price = 420.0
                         },
@@ -318,6 +326,7 @@ namespace WebBanHang.Migrations
                         {
                             Id = 5,
                             CategoryId = 1,
+                            ImageUrl = "images/products/fca9f033-0ded-4e27-84b0-d0e027b5d03d.jpg",
                             Name = "Iphone 12",
                             Price = 630.0
                         },
@@ -325,6 +334,7 @@ namespace WebBanHang.Migrations
                         {
                             Id = 6,
                             CategoryId = 1,
+                            ImageUrl = "images/products/115934e4-92c5-492d-84ff-0c2852f3ba3c.jpg",
                             Name = "Iphone 12 Pro",
                             Price = 750.0
                         },
@@ -332,6 +342,7 @@ namespace WebBanHang.Migrations
                         {
                             Id = 7,
                             CategoryId = 1,
+                            ImageUrl = "images/products/dd2e787a-3b40-440e-930b-eab3e3a00c06.jpg",
                             Name = "Iphone 14",
                             Price = 820.0
                         },
@@ -339,6 +350,7 @@ namespace WebBanHang.Migrations
                         {
                             Id = 8,
                             CategoryId = 1,
+                            ImageUrl = "images/products/93b0478f-18d7-42b4-9ffd-e8658cbfbe7f.jpg",
                             Name = "Iphone 14 Pro",
                             Price = 950.0
                         },
@@ -346,6 +358,7 @@ namespace WebBanHang.Migrations
                         {
                             Id = 9,
                             CategoryId = 1,
+                            ImageUrl = "images/products/9f71f0bf-7585-4835-875a-396936c9dca4.jpg",
                             Name = "Iphone 15",
                             Price = 1200.0
                         },
@@ -353,6 +366,7 @@ namespace WebBanHang.Migrations
                         {
                             Id = 10,
                             CategoryId = 1,
+                            ImageUrl = "images/products/0c7475e1-6507-4df5-89e4-2d6c893f23eb.jpg",
                             Name = "Iphone 15 Pro Max ",
                             Price = 1450.0
                         },
@@ -360,6 +374,7 @@ namespace WebBanHang.Migrations
                         {
                             Id = 11,
                             CategoryId = 2,
+                            ImageUrl = "images/products/9bae10d4-d035-44eb-9f30-83381a73dd8d.jpg",
                             Name = "Ipad Gen 10",
                             Price = 750.0
                         },
@@ -367,6 +382,7 @@ namespace WebBanHang.Migrations
                         {
                             Id = 12,
                             CategoryId = 2,
+                            ImageUrl = "images/products/fd40ff16-2beb-43bf-bb66-425b3b598ee4.jpg",
                             Name = "Ipad Pro 11",
                             Price = 1250.0
                         });
